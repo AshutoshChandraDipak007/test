@@ -1,0 +1,20 @@
+<div class="container">
+<div class="form-inline">
+  <div class="form-group col-md-3">
+    <label for="email" style="width:40%">Short_Name :</label>
+    <input [(ngModel)]="shortName" (change)="onShortNameChange(shortName)" type="text" class="form-control input-md" id="email" placeholder="Short_Name" style="width:60%"/>
+  </div>
+  <div class="form-group col-md-5"> 
+    <label for="pwd" style="width:20%">Full_Name :</label>
+    <input type="text"  [(ngModel)]="cupid" value="{{fullName}}" class="form-control input-md" id="pwd"  placeholder="Full_Name"  style="width:80%"/>
+  </div>
+  
+  <div class="form-group col-md-3">
+    <label for="pwd" style="width:30%">CUIP_ID :</label>
+    <input input type="text" [(ngModel)]="siino" value="{{siino}}" class="form-control input-normal" id="pwd"  placeholder="CUIP_ID" style="width:70%"/>
+  </div>
+  <div class="form-group col-md-1">
+    <button type="submit" class="btn btn-primary" (click)="onClickTerminateFund()">Terminate</button>
+  </div>
+</div>
+</div>

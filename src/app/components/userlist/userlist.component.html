@@ -1,0 +1,29 @@
+<div class="col-md-6">
+
+    <h2> User Details</h2>
+    <div class="form-group"> 
+        Search By firstname: <input type="text" class="form-control" placeholder="search by name" [(ngModel)]="searchtext" />
+    </div>
+   
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+      <tbody>
+          <tr *ngFor="let user of users | userpipe:searchtext">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td colspan="1"><button type="button" class="btn btn-primary">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">delete</button></td>
+          </tr>
+      </tbody>
+    </table>
+ 
+    </div>
