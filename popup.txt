@@ -1,0 +1,11 @@
+<p-dialog header="TASA Header" [(visible)]="message" [responsive]="true" showEffect="fade" [modal]="true">
+        <div class="alert alert-info">
+            Are You sure you want delete the Record?
+          </div>
+          <p-footer>
+            <div class="ui-dialog-buttonpane">
+                <button type="button" class="dialogbtn" pButton icon="fa-close" (click)="closeDialog()" label="close"></button>
+              <button type="button" class="dialogbtn" pButton icon="fa-check" (click)="deleteRowConfirm()" label="Ok"></button>
+            </div>
+          </p-footer>
+</p-dialog>
