@@ -29,3 +29,41 @@
     </div>
   </p-footer>
 </p-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BrowserModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    CalendarModule,
+    PanelModule,
+    TooltipModule,
+    FormsModule,
+    DataTableModule,
+    DialogModule,
+    SharedModule,
+    HttpClientModule,
+    AppRoutingModule,
+    Ng2AutoCompleteModule,
+    NgDatepickerModule
