@@ -1,0 +1,31 @@
+<p-dialog header=" " [(visible)]="popDbDcFlag" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid">
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+         <!--  <th>FundName</th>  -->
+          <th>Category</th>
+        </tr>
+            <tr>
+            <!-- <td>{{gaFundCategory.fundName}}</td> -->
+            <td>
+                <label for="DB">DB</label> 
+                <input type="checkbox" name="DB" [(ngModel)]="dbCheckBox" (change)="onClickDbCheckBox(dbCheckBox)">
+           </td>                   
+       </tr>
+     <tr>
+        <!-- <td>{{gaFundCategory.fundName}}</td> -->
+        <td>
+            <label for="DB">DC</label>
+            <input type="checkbox" name="DC" [(ngModel)]="dcCheckBox" (change)="onClickDcCheckBox(dcCheckBox)">
+       </td>                   
+   </tr>
+      </tbody>
+    </table>
+  </div>
+  <p-footer>
+    <div class="ui-dialog-buttonpane ui-helper-clearfix">
+      <button type="button" pButton icon="fa-check" (click)="onClickInsertOk()" label="OK"></button>
+    </div>
+  </p-footer>
+</p-dialog>
