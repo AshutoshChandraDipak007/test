@@ -1,59 +1,89 @@
-<p-dialog header=" " [(visible)]="popDbDcFlag" [responsive]="true" showEffect="fade" [modal]="true">
-  <div class="ui-grid ui-grid-responsive ui-fluid">
-    <table class="table table-striped">
-      <tbody>
-        <tr>
-         <!--  <th>FundName</th>  -->
-          <th>Category</th>
-        </tr>
-            <tr>
-            <!-- <td>{{gaFundCategory.fundName}}</td> -->
-            <td>
-                <label for="DB">DB</label> 
-                <input type="checkbox" name="DB" [(ngModel)]="dbCheckBox" (change)="onClickDbCheckBox(dbCheckBox)">
-           </td>                   
-       </tr>
-     <tr>
-        <!-- <td>{{gaFundCategory.fundName}}</td> -->
-        <td>
-            <label for="DB">DC</label>
-            <input type="checkbox" name="DC" [(ngModel)]="dcCheckBox" (change)="onClickDcCheckBox(dcCheckBox)">
-       </td>                   
-   </tr>
-      </tbody>
-    </table>
-  </div>
-  <p-footer>
-    <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton icon="fa-check" (click)="onClickInsertOk()" label="OK"></button>
-    </div>
-  </p-footer>
-</p-dialog>
+import { FundperformanceComponent } from './fundperformance/fundperformance.component';
+import { ExcelService } from './services/excel.service';
+import { XlscomponentComponent } from './xlscomponent/xlscomponent.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DataTableModule, SharedModule } from 'primeng/primeng';
+import { ButtonModule, PanelModule, CalendarModule, DialogModule, TooltipModule } from 'primeng/primeng';
+import { AppComponent } from './app.component';
+import { AlertComponent } from './Directives/index';
+import { AlertService } from './services/login';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { DailyNavMaintenaceComponent } from './daily-nav-maintenace/daily-nav-maintenace.component';
+import { DividendMaintenaceComponent } from './dividend-maintenace/dividend-maintenace.component';
+import { AdjFactoryComponent } from './adj-factory/adj-factory.component';
+import { MillReturnRateComponent } from './mill-return-rate/mill-return-rate.component';
+import { MillRateHistoryComponent } from './mill-rate-history/mill-rate-history.component';
+import { AuditedNavMaintenaceComponent } from './audited-nav-maintenace/audited-nav-maintenace.component';
+import { UventryComponent } from './uventry/uventry.component';
+import { AdjFactoryHistoryComponent } from './adj-factory-history/adj-factory-history.component';
+import { NavAdjFactHistoryComponent } from './nav-adj-fact-history/nav-adj-fact-history.component';
+import { OnlyNumber} from './Directives/onlynumber.directive';
+import { OnlyNumber1} from './Directives/alphanumeric.directive';
+import { DatePickerDirective } from './Directives/datepicker.directive';
+import { Ng2AutoCompleteModule } from './auto-complete/dist';
+import { NgDatepickerModule } from 'ng2-datepicker';
+import { DecimalPipe } from '@angular/common';
+import { TasaService } from '../app/Tasa.service';
+import { LogoutComponent } from './logout/logout.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { InternalErrorComponent } from './internal-error/internal-error.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { CusipChangeComponent } from './cusip-change/cusip-change.component';
+import { FundNameChangeComponent } from './fund-name-change/fund-name-change.component';
+import { TickerNameChangeComponent } from './ticker-name-change/ticker-name-change.component';
+import { TerminateGaFundComponent } from './terminate-ga-fund/terminate-ga-fund.component';
+import { AssetClassSpanishNameComponent } from './asset-class-spanish-name/asset-class-spanish-name.component';
+import { GaFundPlanCategoryComponent } from './ga-fund-plan-category/ga-fund-plan-category.component';
+import { NavEquityFundAddComponent } from './nav-equity-fund-add/nav-equity-fund-add.component';
+import { NsccTradeInfoComponent } from './nscc-trade-info/nscc-trade-info.component';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-BrowserModule,
+@NgModule({
+  declarations: [
+    AppComponent,
+    AlertComponent,
+    LoginComponent,
+    LandingPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    DailyNavMaintenaceComponent,
+    DividendMaintenaceComponent,
+    AdjFactoryComponent,
+    MillReturnRateComponent,
+    MillRateHistoryComponent,
+    AuditedNavMaintenaceComponent,
+    UventryComponent,
+    AdjFactoryHistoryComponent,
+    NavAdjFactHistoryComponent,
+    DatePickerDirective,
+    OnlyNumber,
+    OnlyNumber1,
+    LogoutComponent,
+    UnauthorizedComponent,
+    InternalErrorComponent,
+    NotfoundComponent,
+    CusipChangeComponent,
+    FundNameChangeComponent,
+    TickerNameChangeComponent,
+    TerminateGaFundComponent,
+    AssetClassSpanishNameComponent,
+    GaFundPlanCategoryComponent,
+     XlscomponentComponent,
+    FundperformanceComponent,
+    NavEquityFundAddComponent,
+    NsccTradeInfoComponent
+   
+  ],
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     ButtonModule,
     CalendarModule,
@@ -67,3 +97,11 @@ BrowserModule,
     AppRoutingModule,
     Ng2AutoCompleteModule,
     NgDatepickerModule
+  ],
+  providers: [TasaService,
+    AlertService,ExcelService,
+    DecimalPipe
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
